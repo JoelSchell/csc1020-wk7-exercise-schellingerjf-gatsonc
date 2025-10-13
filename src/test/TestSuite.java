@@ -15,4 +15,11 @@ public class TestSuite {
     public void happyCase1() {
 
     }
+    @Test
+    @Order(4)
+    public void boundaryCase1(){
+        Assertions.assertThrows(IllegalArgumentException.class, () -> bankAccount.deposit(0));
+
+
+    }
 }

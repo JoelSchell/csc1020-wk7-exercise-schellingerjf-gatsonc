@@ -13,6 +13,14 @@ public class TestSuite {
     @Test
     @Order(1)
     public void happyCase1() {
+        bankAccount.deposit(5000);
+        Assertions.assertEquals(bankAccount.balanceCents(), 10000);
+    }
 
+    @Test
+    @Order(2)
+    public void happyCase2() {
+        bankAccount.withdraw(1000);
+        Assertions.assertEquals(bankAccount.balanceCents(), 4000);
     }
 }

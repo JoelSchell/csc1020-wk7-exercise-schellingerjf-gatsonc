@@ -23,4 +23,11 @@ public class TestSuite {
         bankAccount.withdraw(1000);
         Assertions.assertEquals(bankAccount.balanceCents(), 4000);
     }
+    @Test
+    @Order(4)
+    public void boundaryCase1(){
+        Assertions.assertThrows(IllegalArgumentException.class, () -> bankAccount.deposit(0));
+
+
+    }
 }

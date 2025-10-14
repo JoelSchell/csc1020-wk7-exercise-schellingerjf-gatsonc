@@ -93,4 +93,10 @@ public class TestSuite {
     public void invalidCase8() {
         Assertions.assertThrows(IllegalStateException.class, () -> bankAccount.withdraw(10000));
     }
+
+    @Test
+    @Order(16)
+    public void invalidCase9() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> bankAccount.transferTo(bankAccount, 1000));
+    }
 }

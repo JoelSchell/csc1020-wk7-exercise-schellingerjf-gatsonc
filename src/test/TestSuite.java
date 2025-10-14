@@ -87,4 +87,10 @@ public class TestSuite {
     public void invalidCase7() {
         Assertions.assertThrows(IllegalStateException.class, () -> bankAccount.transferTo(bankAccount1, 10000));
     }
+
+    @Test
+    @Order(15)
+    public void invalidCase8() {
+        Assertions.assertThrows(IllegalStateException.class, () -> bankAccount.withdraw(10000));
+    }
 }
